@@ -2,10 +2,13 @@
 
 % ここに，使用するパッケージを列挙する．
 \usepackage{jsise}
+\usepackage{setspace}
 %\usepackage{uarial}
 \usepackage{url}
-\usepackage [dvipdfmx] {graphicx}
+\usepackage[dvipdfmx]{graphicx}
 %\usepackage{fancybox}
+
+\usepackage[top=25truemm,bottom=25truemm,left=25truemm,right=25truemm]{geometry}
 
 \begin{document}
 % 和文タイトル
@@ -39,6 +42,8 @@ Information processing is the change (processing) of information in any manner d
 \section{はじめに}
 \msnormalsize
 従来，研究会報告原稿は学会誌執筆要領に従って作成することとされていた．しかし，学会誌投稿原稿はそのまま印刷することを考慮していないため，フォントサイズの指定がない，マージンの指定がないなど，一部詳細が定められておらず，あいまいな部分があった．そこで，今回，学会誌執筆要領を参考にして，不足している情報を補い，執筆要領を定めた．
+\cite{jsise-sample-article:en}
+\cite{jsise-sample-article:ja}
 
 なお，この文章は研究会報告の書式例として用意したものである．研究報告作成に当たっては，学会ホームページに掲載している「研究報告執筆要領」を参照されたい．
 
@@ -130,18 +135,9 @@ Information processing is the change (processing) of information in any manner d
 ４９あいうえおあいうえおあいうえおあいうえおあい
 ５０あいうえおあいうえおあいうえおあいうえおあい
 
-\begin{thebibliography}{5}
-\bibitem{tsushima}
-  対馬勝英, 加賀英徳, 中村勝則: "数式処理における DMI 機能の実現", CAI学会誌, Vol.7, No.2, pp.43-53 (1990)
-\bibitem{okamoto}
-  岡本敏雄, 松田昇: "知的CAIにおける幾何の証明計画の認識と学習機能について", 情報処理学会論文誌, 第30巻, 第8号, pp.1046-57 (1989)
-\bibitem{jipdc}
-  日本情報処理開発センター編: "CAI システム", 日刊工業新聞社, 東京 (1972)
-\bibitem{ricjart}
-  Rockart, J. F. and Morton, M.S.S.: "Computers and the Learning Process in Higher Education", McGraw Hill, New York (1975)
-\bibitem{jsise}
-  教育システム情報学会研究会報告執筆要領,
-  http://www.jsise.org/society/format.html (2015年9月11日確認)
-\end{thebibliography}
+\bibliographystyle{jsise}
+\begin{spacing}{1.0}
+\bibliography{sample}
+\end{spacing}
 
 \end{document}
