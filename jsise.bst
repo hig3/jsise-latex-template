@@ -2,7 +2,7 @@
 % version 0.30 for JBibTeX versions 0.30 or later, LaTeX version 2.09 or later.
 % Copyright (C) 1990-2006, all rights reserved.
 %
-% This file is derived from btxbst.doc of BibTeX 0.99c
+% This file is derived from btxbst.doc of BibTeX 0.99c and jieicej.bst
 %
 % Copying of this file is authorized only if either
 % (1) you make absolutely no changes to your copy, including name, or
@@ -21,6 +21,10 @@
 %%% ・bookのtitleを変換せずにそのまま出現させるように変更
 %%%   今までは先頭の単語とコロンの後の単語のみ頭文字大文字としそれ以外は小文字としていた
 %%% ・book，inbook，proceedingsのeditor表記でed.の前に,を入れるように変更
+
+%%% 更新情報
+%%% 2019/06/12 jsise.bst v0.1
+%%% JSiSE用にカスタマイズ
 
 ENTRY
   { address
@@ -184,8 +188,8 @@ FUNCTION {output.nonnull}
                       author field.or.null is.kanji.str$
                       editor field.or.null is.kanji.str$ or
                       organization field.or.null is.kanji.str$ or
-                        { "，" * write$ newline$ }
-                        { ", " * write$ newline$ }
+                        { "：" * write$ newline$ }
+                        { ": " * write$ newline$ }
                       if$
                     }
                   if$
@@ -955,14 +959,14 @@ FUNCTION {format.date}
               title empty$
                 {
                   is.kanji.entry
-                    {"，" year * }
-                    {", " year * }
+                    {"，(" year ")" * * }
+                    {", (" year ")" * * }
                   if$
                 }
                 {
                   title is.kanji.str$
-                    {"，" year * }
-                    {", " year * }
+                    {"，(" year ")" * * }
+                    {", (" year ")" * * }
                   if$
                 }
               if$
@@ -2085,8 +2089,4 @@ FUNCTION {end.bib}
 
 
 EXECUTE {end.bib}
-
-
-
-
 
